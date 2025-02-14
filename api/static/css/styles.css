@@ -394,7 +394,7 @@ body {
     font-weight: 600;
     letter-spacing: -0.005em;
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 #macmini h2 {
@@ -476,6 +476,12 @@ body {
 /* Button Group */
 .button-group-watch {
     margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.button-group-iphone16{
+    margin-top: 400px;
     display: flex;
     gap: 20px;
     justify-content: center;
