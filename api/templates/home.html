@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="main-content">
+
+    <!-- iPhone -->
+    <section id="iphone" class="section">
+        <div class="iphone-image-container fade-text">
+            <img src="{{ url_for('static', filename='images/projects/iphone162.png') }}" alt="iPhone 16 Pro">
+        </div>
+        <div class="iphone-content fade-text">
+            <h1 class="iphone-title">iPhone 16 Pro</h1>
+            <h2>Built for Apple Intelligence</h2>
+            <div class="button-group">
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="iphone16" class="section">
+        <div class="iphone16-image-container fade-text">
+            <img src="{{ url_for('static', filename='images/projects/iphone16.png') }}" alt="iPhone 16 Pro">
+        </div>
+        <div class="iphone16-content fade-text">
+            <h1 class="iphone16-title fade-text">iPhone 16</h1>
+            <h2>Built for Apple Intelligence</h2>
+            <div class="button-group">
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </section>
+    <section class="spline-iphone">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.65/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/biXlH4V2FQa6qj4v/scene.splinecode"></spline-viewer>
+        <h1>Take a closer look.</h1>
+        <h2>Strength. Beauty. Titanium.</h2>
+        
+    </section>
+    <!--  -->
+    
+
+    <!-- Apple watch -->
+    <section id="watch" class="section">
+        <div class="watch-image-container slide-element">
+            <img src="{{ url_for('static', filename='images/projects/apple.png') }}" alt="iPhone 16 Pro">
+        </div>
+        <div class="watch-content slide-element">
+            <h1 class="watch-title"> Watch</h1>
+            <h3>SERIES 10</h3>
+            <h2>Upgrade your wrist</h2>
+            <p>Track your health, stay fit, and never miss a moment with the Apple Watch! Monitor your heart rate, ❤️ ECG, and SpO2, get notifications on the go, and enjoy seamless connectivity with your iPhone. Smart, stylish, and built for your lifestyle!</p>
+
+            <div class="button-group-watch">
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="macmini" class="section">
+        <div class="macmini-image-container">
+            <img src="{{ url_for('static', filename='images/projects/macmini.png') }}" alt="iPhone 16 Pro">
+        </div>
+        <div class="macmini-content">
+            <h1 class="macmini-title">Mac Mini</h1>
+            <h2>Looks small. Lives large.</h2>
+            <div class="button-group-macmini">
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </section>
+    <section class="macmini-section">
+        <div class="macmini-container">
+            <div class="macmini-item">
+                <img src="{{ url_for('static', filename='images/projects/macmini_grid1.png') }}" alt="Apple Watch">
+        </div>
+        <div class="macmini-container">
+            <div class="macmini-item">
+                <img src="{{ url_for('static', filename='images/projects/macmini_grid2.png') }}" alt="Apple Watch">
+        </div>
+        <div class="macmini-container">
+            <div class="macmini-item">
+                <img src="{{ url_for('static', filename='images/projects/macmini_grid3.png') }}" alt="Apple Watch">
+        </div>
+        <div class="macmini-container">
+            <div class="macmini-item">
+                <img src="{{ url_for('static', filename='images/projects/macmini_grid4.png') }}" alt="Apple Watch">
+        </div>
+    </section>
+
+    <!-- Mac -->
+    <section id="mac" class="section">
+        <div class="mac-image-container fade-text">
+            <img src="{{ url_for('static', filename='images/projects/macbook.png') }}" alt="iPhone 16 Pro">
+        </div>
+        <div class="mac-content fade-text">
+            <h1 class="mac-title fade-text">MacBook Pro</h1>
+            <div class="button-group fade-text">
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="spline-mac">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.65/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/JfCiJjF2yIv8uvUy/scene.splinecode"></spline-viewer>
+        <h1>Supercharged by M3.</h1>
+        <h2>If you can dream it,
+            Mac can do it.</h2>
+        <!-- <h2>Strength. Beauty. Titanium.</h2> -->
+    </section>
+
+    <section class="grid-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/watch.png') }}" alt="Apple Watch">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/mac.png') }}" alt="Mac">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/macmini1.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/airpods.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/applemusic.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/xcode.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/imac.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/ip.png') }}" alt="iPad">
+            </div>
+            <div class="grid-item">
+                <img src="{{ url_for('static', filename='images/projects/swift.png') }}" alt="iPad">
+            </div>
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="links">
+            <div>
+                <h4>Shop and Learn</h4>
+                <ul>
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">Mac</a></li>
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Watch</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Apple Music</a></li>
+                    <li><a href="#">Apple TV+</a></li>
+                    <li><a href="#">iCloud</a></li>
+                    <li><a href="#">Apple Pay</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Apple Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal">
+            <p>© 2025 Shantanu. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+            <a class="portfolio" href="https://portfolio-wheat-seven-59.vercel.app/">My Portfolio</a>
+        </div>
+    </footer>
+</main>
+{% endblock %}

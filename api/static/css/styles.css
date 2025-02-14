@@ -1,0 +1,794 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+    background-color: white;
+    color: #1d1d1f;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Navigation */
+.nav {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+.nav__link__logo{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+
+.nav__link:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.nav__link--active {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Main content */
+.main-content {
+    padding-top: 44px; /* Height of nav */
+}
+
+/* Section styling */
+.section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* iPhone section specific styles */
+#iphone {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 10px solid white;
+}
+
+.iphone-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.iphone-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iphone-image-container img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.iphone-title {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#iphone h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* iPhone section specific styles */
+#iphone16 {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #F5F6F8;
+}
+
+.iphone16-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    width: 100%;
+    color: #000000;
+}
+
+.iphone16-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iphone16-image-container img {
+    size: cover;
+    max-width: 100%;
+    height: 77%;
+    object-fit: fill;
+}
+
+.iphone16-title {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+#iphone16 h2 {
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin-bottom: 5.0rem;
+    background-image: linear-gradient(180deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);/* Define the gradient colors */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; 
+}
+.fade-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s ease-out, transform 2.5s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+/* Button styles */
+.button-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 25rem;
+    z-index: 2;
+}
+.button-group{
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center (if needed) */
+}
+
+.button {
+    background: none;
+    border: 1px solid #2997ff; /* Added a visible border */
+    border-radius: 50px; /* Optional: Rounds the corners */
+    color: #2997ff;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 8px 16px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.button:hover {
+    background-color: #2997ff; 
+    transition: color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+    color: white;
+}
+
+.button::after {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+.spline-iphone {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative; /* Ensures child absolute positioning */
+    border-bottom: 2px solid #1d1d1f;
+}
+
+.spline-iphone h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 100px;
+    color: #86868b;
+    position: absolute; /* Places text above the spline */
+    top: 50px; /* Adjust as needed */
+    right: 55%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensures text stays above */
+}
+.spline-iphone h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    position: absolute; /* Places text above the spline */
+    top: 50px; /* Adjust as needed */
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensures text stays above */
+    background-image: linear-gradient(10deg, #FAD961 0%, #F76B1C 100%);/* Define the gradient colors */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; 
+}
+
+/* iPhone section specific styles */
+#mac {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 10px solid white;
+
+}
+
+.mac-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    width: 100%;
+
+}
+
+.mac-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mac-image-container img {
+    max-width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.mac-title {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#mac h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.spline-mac {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative; /* Ensures child absolute positioning */
+    border-bottom: 10px solid white;
+}
+
+.spline-mac h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 100px;
+    position: absolute; /* Places text above the spline */
+    top: 50px; /* Adjust as needed */
+    right: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensures text stays above */
+    background-image: linear-gradient(180deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);/* Define the gradient colors */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent;
+    
+
+}
+.spline-mac h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: white;
+    position: absolute; /* Places text above the spline */
+    top: 50px; /* Adjust as needed */
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensures text stays above */
+}
+
+/* macmini */
+#macmini {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 10px solid white;
+
+}
+
+.macmini-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    width: 100%;
+
+}
+
+.macmini-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.macmini-image-container img {
+    max-width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.macmini-title {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#macmini h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.button-group-macmini {
+    margin-top: 500px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+/* Watch */
+/* Watch Section Base Styles */
+#watch {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    border-bottom: 10px solid white;
+}
+
+/* Content Container */
+.watch-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image Container */
+.watch-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch-image-container img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography */
+.watch-title {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.5rem;
+    
+}
+
+#watch h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #2997ff;
+}
+
+/* Button Group */
+.button-group-watch {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Animation Base */
+.slide-element {
+    opacity: 0;
+    transition: all 1.4s ease-out;
+    will-change: transform, opacity;
+}
+
+/* Slide Animation States */
+
+.watch-image-container.slide-left {
+    opacity: 1;
+
+    transform: translateX(-350px);
+}
+
+.watch-content.slide-right {
+    opacity: 1;
+
+    transform: translateX(300px);
+}
+
+/* Paragraph Styles in Slid State */
+.watch-content.slide-right p {
+    text-align: center;
+    width: 40%;  /* Reduced from 70% for better fit */
+    
+    color: #86868b;
+    transform: translateX(-380px);
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: 50px;  /* Added specific right margin */
+    padding-right: 20px;
+    line-height: 1.4;
+    transition: all 1.2s ease-out;
+}
+
+/* Starting Positions */
+.watch-image-container {
+    transform: translateX(0);
+}
+
+.watch-content {
+    transform: translateX(0);
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .watch-content.slide-right p {
+        width: 70%;
+        transform: translateX(200px);
+        font-size: 1.5rem;
+    }
+    
+    .watch-image-container.slide-left {
+        transform: translateX(-200px);
+    }
+    
+    .watch-content.slide-right {
+        transform: translateX(200px);
+    }
+}
+
+@media (max-width: 768px) {
+    .watch-title {
+        font-size: 42px;
+    }
+    
+    #watch h2 {
+        font-size: 24px;
+    }
+    
+    .watch-content.slide-right p {
+        width: 90%;
+        transform: translateX(100px);
+        font-size: 1.3rem;
+    }
+    
+    .watch-image-container.slide-left {
+        transform: translateX(-100px);
+    }
+    
+    .watch-content.slide-right {
+        transform: translateX(100px);
+    }
+}
+
+
+
+footer {
+    background: #f5f5f7;
+    padding: 20px 10%;
+    font-size: 12px;
+    color: #6e6e73;
+}
+.footer .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d2d2d7;
+}
+.footer .links div {
+    min-width: 150px;
+    margin-bottom: 10px;
+}
+.footer .links h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+.footer .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer .links ul li {
+    margin-bottom: 6px;
+}
+.footer .links ul li a {
+    text-decoration: none;
+    color: #6e6e73;
+}
+.footer .links ul li a:hover {
+    text-decoration: underline;
+}
+.footer .legal {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 12px;
+}
+.footer .legal a {
+    color: #6e6e73;
+    text-decoration: none;
+}
+.footer .legal a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+
+/* Responsive design */
+@media (max-width: 1068px) {
+    .iphone-title {
+        font-size: 48px;
+    }
+    
+    #iphone h2 {
+        font-size: 24px;
+    }
+    
+    .button {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 734px) {
+    .nav {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+    
+    .iphone-title {
+        font-size: 40px;
+    }
+    
+    #iphone h2 {
+        font-size: 21px;
+    }
+    
+    .button {
+        font-size: 17px;
+    }
+}
+
+
+
+.grid-section {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid white;
+    
+    padding: 20px;
+}
+
+.grid-wrapper {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.grid-container {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+    
+}
+
+.grid-item {
+    flex: 0 0 auto;
+    width: 350px; /* Adjust based on your design */
+    height: 350px;
+
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    transition: all 0.2s ease-out;
+
+}
+.grid-item :hover{
+    transform: scale(1.05);
+    transition: all 0.2s ease-out;
+}
+
+
+/* Keyframe Animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* macmini */
+.macmini-section {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+    padding: 10px;
+}
+
+.macmini-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.macmini-container {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+}
+
+.macmini-item {
+    flex: 0 0 auto;
+    width: 550px; /* Adjust based on your design */
+    height: 450px;
+}
+
+.macmini-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    transition: all 0.2s ease-out;
+
+}
+.macmini-item :hover{
+    transform: scale(1.01);
+    transition: all 0.2s ease-out;
+}
+
+.macmini-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.macmini-container {
+    display: flex;
+    position: relative;
+    width: fit-content;
+}
+
+.macmini-item {
+    flex-shrink: 0;
+    /* Adjust width as needed */
+    margin: 0 10px;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Will be set dynamically by JS */
+        transform: translateX(var(--scroll-width));
+    }
+}
+
+/* Pause on hover */
+.macmini-wrapper:hover .macmini-container {
+    animation-play-state: paused;
+}
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple | Shantanu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+        <nav class="nav">
+            <a href="" class="nav__link__logo"></a>
+            <a href="" class="nav__link">Store</a>
+            <a href="#macmini" class="nav__link">Mac</a>
+            <a href="#ipad" class="nav__link">iPad</a>
+            <a href="#iphone" class="nav__link">iPhone</a>
+            <a href="#watch" class="nav__link">Watch</a>
+            <a href="#airpods" class="nav__link">AirPods</a>
+            <a href="#tv" class="nav__link">TV & Home</a>
+            <a href="#entertainment" class="nav__link">Entertainment</a>
+            <a href="#accessories" class="nav__link">Accessories</a>
+            <a href="#support" class="nav__link">Support</a>
+        </nav>
+
+    {% block content %}{% endblock %}
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav__link').forEach(link => {
+                link.classList.remove('nav__link--active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('nav__link--active');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const footer = document.querySelector('footer');
+            const socialButtons = document.querySelector('.social-buttons');
+            
+            window.addEventListener('scroll', () => {
+                const footerTop = footer.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (footerTop < windowHeight) {
+                    socialButtons.style.bottom = `${windowHeight - footerTop + 20}px`;
+                } else {
+                    socialButtons.style.bottom = '20px';
+                }
+            });
+        
+            // Existing smooth scrolling and active link highlighting code remains the same
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const section = entry.target;
+                    const image = section.querySelector('.watch-image-container');
+                    const content = section.querySelector('.watch-content');
+                    
+                    if (entry.isIntersecting) {
+                        // Sliding in
+                        image.classList.add('slide-left');
+                        content.classList.add('slide-right');
+                    } else {
+                        // Sliding back to original position
+                        image.classList.remove('slide-left');
+                        content.classList.remove('slide-right');
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: "0px"  // This ensures smoother transitions
+            });
+        
+            // Observe the watch section
+            const watchSection = document.querySelector('#watch');
+            observer.observe(watchSection);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const wrapper = document.querySelector(".grid-wrapper");
+            const container = document.querySelector(".grid-container");
+            const items = [...document.querySelectorAll(".grid-item")];
+            
+            // Calculate the total width of all original items
+            const getItemsWidth = () => {
+                return items.reduce((width, item) => width + item.offsetWidth + 
+                    parseInt(getComputedStyle(item).marginLeft) + 
+                    parseInt(getComputedStyle(item).marginRight), 0);
+            };
+
+            // Function to clone items and set up the animation
+            const setupScroll = () => {
+                // Clear existing clones
+                container.innerHTML = '';
+                items.forEach(item => container.appendChild(item));
+
+                const totalWidth = getItemsWidth();
+                
+                // Add enough clones to ensure smooth scrolling
+                // We'll add 3 sets to ensure seamless looping
+                for (let i = 0; i < 3; i++) {
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        container.appendChild(clone);
+                    });
+                }
+
+                // Set CSS variable for the animation
+                document.documentElement.style.setProperty('--scroll-width', `-${totalWidth}px`);
+
+                // Apply the animation
+                container.style.animation = `smoothScroll ${totalWidth * 0.02}s linear infinite`;
+            };
+
+            // Initial setup
+            setupScroll();
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(setupScroll, 250);
+            });
+
+            // Optional: Add touch event handling for mobile
+            let touchStart = 0;
+            let animationPlayState = '';
+
+            wrapper.addEventListener('touchstart', (e) => {
+                touchStart = e.touches[0].clientX;
+                animationPlayState = container.style.animationPlayState;
+                container.style.animationPlayState = 'paused';
+            });
+
+            wrapper.addEventListener('touchmove', (e) => {
+                const touch = e.touches[0];
+                const diff = touchStart - touch.clientX;
+                container.style.transform = `translateX(-${diff}px)`;
+            });
+
+            wrapper.addEventListener('touchend', () => {
+                container.style.transform = '';
+                container.style.animationPlayState = animationPlayState;
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const wrapper = document.querySelector(".macmini-wrapper");
+            const container = document.querySelector(".macmini-container");
+            const items = [...document.querySelectorAll(".macmini-item")];
+            
+            // Calculate the total width of all original items
+            const getItemsWidth = () => {
+                return items.reduce((width, item) => width + item.offsetWidth + 
+                    parseInt(getComputedStyle(item).marginLeft) + 
+                    parseInt(getComputedStyle(item).marginRight), 0);
+            };
+
+            // Function to clone items and set up the animation
+            const setupScroll = () => {
+                // Clear existing clones
+                container.innerHTML = '';
+                items.forEach(item => container.appendChild(item));
+
+                const totalWidth = getItemsWidth();
+                
+                // Add enough clones to ensure smooth scrolling
+                // We'll add 3 sets to ensure seamless looping
+                for (let i = 0; i < 3; i++) {
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        container.appendChild(clone);
+                    });
+                }
+
+                // Set CSS variable for the animation
+                document.documentElement.style.setProperty('--scroll-width', `-${totalWidth}px`);
+
+                // Apply the animation
+                container.style.animation = `smoothScroll ${totalWidth * 0.02}s linear infinite`;
+            };
+
+            // Initial setup
+            setupScroll();
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(setupScroll, 250);
+            });
+
+            // Optional: Add touch event handling for mobile
+            let touchStart = 0;
+            let animationPlayState = '';
+
+            wrapper.addEventListener('touchstart', (e) => {
+                touchStart = e.touches[0].clientX;
+                animationPlayState = container.style.animationPlayState;
+                container.style.animationPlayState = 'paused';
+            });
+
+            wrapper.addEventListener('touchmove', (e) => {
+                const touch = e.touches[0];
+                const diff = touchStart - touch.clientX;
+                container.style.transform = `translateX(-${diff}px)`;
+            });
+
+            wrapper.addEventListener('touchend', () => {
+                container.style.transform = '';
+                container.style.animationPlayState = animationPlayState;
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    } else {
+                        entry.target.classList.remove('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: "0px"
+            });
+        
+            document.querySelectorAll('#iphone16 .fade-text').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    } else {
+                        entry.target.classList.remove('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: "0px"
+            });
+        
+            document.querySelectorAll('#iphone .fade-text').forEach(element => {
+                observer.observe(element);
+            });
+            document.querySelectorAll('#mac .fade-text').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+</body>
+</html>
