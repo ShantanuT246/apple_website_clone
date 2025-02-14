@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 *,
 *::before,
 *::after {
@@ -21,7 +21,7 @@ body {
     line-height: 1.5;
 }
 
-/* Navigation */
+
 .nav {
     font-size: 12px;
     display: flex;
@@ -32,7 +32,7 @@ body {
     height: 44px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
-    /* -webkit-backdrop-filter: blur(20px); */
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -64,19 +64,19 @@ body {
     opacity: 1;
 }
 
-/* Main content */
+
 .main-content {
-    padding-top: 44px; /* Height of nav */
+    padding-top: 44px; 
 }
 
-/* Section styling */
+
 .section {
     min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-/* iPhone section specific styles */
+
 #iphone {
     background-color: #000000;
     color: #ffffff;
@@ -128,7 +128,7 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* iPhone section specific styles */
+
 #iphone16 {
     color: #ffffff;
     display: flex;
@@ -175,8 +175,8 @@ body {
     font-size: 2.7rem;
     font-weight: 500;
     margin-bottom: 5.0rem;
-    background-image: linear-gradient(180deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);/* Define the gradient colors */
-    -webkit-background-clip: text; /* Clips the background to the text */
+    background-image: linear-gradient(180deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
 }
 .fade-text {
@@ -190,7 +190,7 @@ body {
     transform: translateY(5px);
 }
 
-/* Button styles */
+
 .button-group {
     display: flex;
     gap: 1.5rem;
@@ -199,14 +199,14 @@ body {
 }
 .button-group{
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center (if needed) */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .button {
     background: none;
-    border: 1px solid #2997ff; /* Added a visible border */
-    border-radius: 50px; /* Optional: Rounds the corners */
+    border: 1px solid #2997ff; 
+    border-radius: 50px; 
     color: #2997ff;
     font-size: 15px;
     font-weight: 400;
@@ -232,7 +232,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    position: relative; /* Ensures child absolute positioning */
+    position: relative; 
     border-bottom: 2px solid #1d1d1f;
 }
 
@@ -241,27 +241,27 @@ body {
     font-weight: 400;
     margin-bottom: 100px;
     color: #86868b;
-    position: absolute; /* Places text above the spline */
-    top: 50px; /* Adjust as needed */
+    position: absolute; 
+    top: 50px; 
     right: 55%;
     transform: translateX(-50%);
-    z-index: 10; /* Ensures text stays above */
+    z-index: 10; 
 }
 .spline-iphone h2 {
     font-size: 3rem;
     font-weight: 400;
     margin-bottom: 40px;
-    position: absolute; /* Places text above the spline */
-    top: 50px; /* Adjust as needed */
+    position: absolute; 
+    top: 50px; 
     left: 80%;
     transform: translateX(-50%);
-    z-index: 10; /* Ensures text stays above */
-    background-image: linear-gradient(10deg, #FAD961 0%, #F76B1C 100%);/* Define the gradient colors */
-    -webkit-background-clip: text; /* Clips the background to the text */
+    z-index: 10; 
+    background-image: linear-gradient(10deg, #FAD961 0%, #F76B1C 100%);
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
 }
 
-/* iPhone section specific styles */
+
 #mac {
     background-color: #000000;
     color: #ffffff;
@@ -320,7 +320,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    position: relative; /* Ensures child absolute positioning */
+    position: relative; 
     border-bottom: 10px solid white;
 }
 
@@ -328,13 +328,13 @@ body {
     font-size: 3rem;
     font-weight: 400;
     margin-bottom: 100px;
-    position: absolute; /* Places text above the spline */
-    top: 50px; /* Adjust as needed */
+    position: absolute; 
+    top: 50px; 
     right: 50%;
     transform: translateX(-50%);
-    z-index: 10; /* Ensures text stays above */
-    background-image: linear-gradient(180deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);/* Define the gradient colors */
-    -webkit-background-clip: text; /* Clips the background to the text */
+    z-index: 10; 
+    background-image: linear-gradient(180deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
     
 
@@ -344,14 +344,14 @@ body {
     font-weight: 400;
     margin-bottom: 40px;
     color: white;
-    position: absolute; /* Places text above the spline */
-    top: 50px; /* Adjust as needed */
+    position: absolute; 
+    top: 50px; 
     left: 80%;
     transform: translateX(-50%);
-    z-index: 10; /* Ensures text stays above */
+    z-index: 10; 
 }
 
-/* macmini */
+
 #macmini {
     background-color: #000000;
     color: #ffffff;
@@ -412,8 +412,8 @@ body {
 }
 
 
-/* Watch */
-/* Watch Section Base Styles */
+
+
 #watch {
     background-color: white;
     color: black;
@@ -427,7 +427,7 @@ body {
     border-bottom: 10px solid white;
 }
 
-/* Content Container */
+
 .watch-content {
     position: relative;
     z-index: 2;
@@ -438,7 +438,7 @@ body {
     align-items: center;
 }
 
-/* Image Container */
+
 .watch-image-container {
     position: absolute;
     top: 0;
@@ -457,7 +457,7 @@ body {
     object-fit: cover;
 }
 
-/* Typography */
+
 .watch-title {
     font-size: 56px;
     font-weight: 600;
@@ -473,7 +473,7 @@ body {
     color: #2997ff;
 }
 
-/* Button Group */
+
 .button-group-watch {
     margin-top: 40px;
     display: flex;
@@ -487,14 +487,14 @@ body {
     justify-content: center;
 }
 
-/* Animation Base */
+
 .slide-element {
     opacity: 0;
     transition: all 1.4s ease-out;
     will-change: transform, opacity;
 }
 
-/* Slide Animation States */
+
 
 .watch-image-container.slide-left {
     opacity: 1;
@@ -508,22 +508,22 @@ body {
     transform: translateX(300px);
 }
 
-/* Paragraph Styles in Slid State */
+
 .watch-content.slide-right p {
     text-align: center;
-    width: 40%;  /* Reduced from 70% for better fit */
+    width: 40%;  
     
     color: #86868b;
     transform: translateX(-380px);
     font-size: 1.5rem;
     margin-left: auto;
-    margin-right: 50px;  /* Added specific right margin */
+    margin-right: 50px;  
     padding-right: 20px;
     line-height: 1.4;
     transition: all 1.2s ease-out;
 }
 
-/* Starting Positions */
+
 .watch-image-container {
     transform: translateX(0);
 }
@@ -534,7 +534,7 @@ body {
 
 
 
-/* Responsive Adjustments */
+
 @media (max-width: 1024px) {
     .watch-content.slide-right p {
         width: 70%;
@@ -631,7 +631,7 @@ footer {
 }
 
 
-/* Responsive design */
+
 @media (max-width: 1068px) {
     .iphone-title {
         font-size: 48px;
@@ -693,7 +693,7 @@ footer {
 
 .grid-item {
     flex: 0 0 auto;
-    width: 350px; /* Adjust based on your design */
+    width: 350px; 
     height: 350px;
 
 }
@@ -711,7 +711,7 @@ footer {
 }
 
 
-/* Keyframe Animation */
+
 @keyframes scroll {
     from {
         transform: translateX(0);
@@ -721,7 +721,7 @@ footer {
     }
 }
 
-/* macmini */
+
 .macmini-section {
     overflow: hidden;
     width: 100%;
@@ -749,7 +749,7 @@ footer {
 
 .macmini-item {
     flex: 0 0 auto;
-    width: 550px; /* Adjust based on your design */
+    width: 550px; 
     height: 450px;
 }
 
@@ -779,7 +779,7 @@ footer {
 
 .macmini-item {
     flex-shrink: 0;
-    /* Adjust width as needed */
+    
     margin: 0 10px;
 }
 
@@ -788,12 +788,12 @@ footer {
         transform: translateX(0);
     }
     100% {
-        /* Will be set dynamically by JS */
+        
         transform: translateX(var(--scroll-width));
     }
 }
 
-/* Pause on hover */
+
 .macmini-wrapper:hover .macmini-container {
     animation-play-state: paused;
 }
